@@ -1,51 +1,84 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Student Admin</title>
 
-        <!-- INCLUDE STYLES HERE (generic to specific) -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Admin</title>
 
-        <!--bootstrap-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- INCLUDE STYLES HERE (generic to specific) -->
 
-        <!--jquery-ui css-->
-        <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <!--bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-        <!--styles.css should always be last-->
-        <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  <!--jquery-ui css-->
+  <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-        <!-- INCLUDE STYLES HERE END -->
+  <!--styles.css should always be last-->
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
 
-    </head>
-    <body>
+  <!-- DataTables css  -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.12/b-1.2.2/b-print-1.2.2/cr-1.3.2/datatables.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.2.2/css/select.bootstrap.min.css" />
 
-        <!-- Fixed navbar -->
-        <%- partial ('partials/navigation.ejs') %>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+  <!-- INCLUDE STYLES HERE END -->
 
-        <div class="container">
-            <!-- include view here -->
-            <%- body %>
-        </div>
+</head>
 
-        <!-- INCLUDE JS LIBRARIES HERE (generic to specific) -->
+<body>
 
-            <!--jquery js-->
-            <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <!-- Fixed navbar -->
+  <%- partial ('partials/navigation.ejs') %>
 
-            <!--bootstrap js-->
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <div class="container">
+      <!-- include view here -->
+      <%- body %>
+    </div>
 
-            <!--jquery-ui js-->
-            <script type="text/javascript" src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- INCLUDE JS LIBRARIES HERE (generic to specific) -->
 
+    <!--jquery js-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
 
-            <!--custom js (your work)-->
-            <script src="js/manage_students.js"></script>
+    <!--jquery-ui js-->
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-        <!-- INCLUDE JS LIBRARIES HERE END -->
+    <!--bootstrap js-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    </body>
+    <!-- jQuery Validate JavaScript -->
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+
+    <!-- jQuery additional validation methods -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jszip-2.5.0/pdfmake-0.1.18/dt-1.10.12/b-1.2.2/b-html5-1.2.2/b-print-1.2.2/cr-1.3.2/datatables.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/select/1.2.2/js/dataTables.select.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/i18n/defaults-*.min.js"></script> -->
+
+    <!--custom js (your work)-->
+    <script src="js/manage_assignments.js"></script>
+    <script src="js/manage_classes.js"></script>
+    <script src="js/manage_grades.js"></script>
+    <script src="js/manage_instructors.js"></script>
+    <script src="js/manage_majors_classes.js"></script>
+    <script src="js/manage_majors.js"></script>
+    <script src="js/manage_students_classes.js"></script>
+    <script src="js/manage_students.js"></script>
+    <script src="js/layout.js"></script>
+
+    <!-- INCLUDE JS LIBRARIES HERE END -->
+
+</body>
+
 </html>

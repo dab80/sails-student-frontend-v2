@@ -1,23 +1,24 @@
 /**
- * StudentController
+ * InstructorController
  *
- * @description :: Server-side logic for managing students
+ * @description :: Server-side logic for managing instructors
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
 var Client = require('node-rest-client').Client;
 var client = new Client();
-var endpoint = "http://localhost:1337/student";
-var view = "manage_students";
+var endpoint = "http://localhost:1337/instructor";
+var view = "manage_instructors";
 //-- changes empty strings to null
 function clean_request_body(request_body){
-  return JSON.parse(JSON.stringify(request_body).replace(/\"\"/g, null))
+  debugger;
+    return JSON.parse(JSON.stringify(request_body).replace(/\"\"/g, null))
 }
 
 module.exports = {
 
   /**
-   * `StudentController.create()`
+   * `InstructorController.create()`
    */
   create: function (req, res) {
 
@@ -42,33 +43,33 @@ module.exports = {
 
 
   /**
-   * `StudentController.read()`
+   * `InstructorController.read()`
    */
   read: function (req, res) {
 
     client.get(endpoint, function (data, response) {
-        return res.view(view, {students: data});
+        return res.view(view, {instructor: data});
     }).on('error', function (err) {
-        return res.view(view, {error: { message: "There was an error getting the students"}});
+        return res.view(view, {error: { message: "There was an error getting the instructor"}});
     });
 
   },
 
 
    /**
-   * `StudentController.update()`
+   * `InstructorController.update()`
    */
   update: function (req, res) {
 
-    let studentId = req.body.student_id;
-    delete req.body.student_id;
+    let instructorId = req.body.instructor_id;
+    delete req.body.instructor_id;
 
     var args = {
         data: clean_request_body(req.body),
         headers: { "Content-Type": "application/json" }
     };
 
-    client.put(endpoint + "/" + studentId, args, function (data, response) {
+    client.put(endpoint + "/" + instructorId, args, function (data, response) {
 
       if(response.statusCode != "200"){
           req.addFlash("error", data.message);
@@ -82,11 +83,11 @@ module.exports = {
   },
 
   /**
-   * `StudentController.delete()`
+   * `InstructorController.delete()`
    */
   delete: function (req, res) {
 
-    client.delete(endpoint + "/" + req.body.student_id, function (data, response) {
+    client.delete(endpoint + "/" + req.body.instructor_id, function (data, response) {
 
       if(response.statusCode != "200"){
           req.addFlash("error", data.message);
